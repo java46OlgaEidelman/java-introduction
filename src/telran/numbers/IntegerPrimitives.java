@@ -16,13 +16,7 @@ public class IntegerPrimitives {
 
 	public static int getLengthByte() {
 		
-		byte res = 1;
-		int count = 1;
-		while(res > 0) {
-			res = (byte) (res * 2);
-			count++;
-		}
-		return count / 8;
+		return getLength(getMaxByte());
 	}
 
 	public static long getMaxLong() {
@@ -38,16 +32,8 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthLong() {
-		long res = 1;
-		int count = 1;
 		
-		while (res > 0) {
-			res =  (res * 2);
-			
-			count++;
-
-		}
-		return count / 8;
+		return getLength(getMaxLong());
 		
 	}
 
@@ -66,14 +52,8 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthInt() {
-		int res = 1;
-		int count = 1;
-		while (res > 0) {
-			res = (int) (res * 2);
-			count++;
-
-		}
-		return count / 8;
+		
+		return getLength(getMaxInt());
 	  
 	}
 
@@ -92,14 +72,7 @@ public class IntegerPrimitives {
 
 	public static int getlengthShort() {
 		 
-		short res = 1;
-		int count = 1;
-		while (res > 0) {
-			res = (short) (res * 2);
-			count++;
-
-		}
-		return count / 8;
+		return getLength(getMaxShort());
 	}
 	public static char getMaxChar() {
 		char res = 1;
@@ -116,14 +89,7 @@ public class IntegerPrimitives {
 
 	public static int getLengthChar() {
 		
-		char res = 1;
-		int count = 1;
-		while (res > 0) {
-			res = (char) (res * 2);
-			count++;
-
-		}
-		return count / 8;
+		return getLength(getMaxChar());
 	}
 	
 	private static int getLength(long x) {
