@@ -14,9 +14,15 @@ public class IntegerPrimitives {
 		return (byte) (getMaxByte() + 1);
 	}
 
-	public static byte getLengthByte() {
+	public static int getLengthByte() {
 		
-		return -1;
+		byte res = 1;
+		int count = 1;
+		while(res > 0) {
+			res = (byte) (res * 2);
+			count++;
+		}
+		return count / 8;
 	}
 
 	public static long getMaxLong() {
@@ -32,8 +38,17 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthLong() {
-		// TODO Auto-generated method stub
-		return -1;
+		long res = 1;
+		int count = 1;
+		
+		while (res > 0) {
+			res =  (res * 2);
+			
+			count++;
+
+		}
+		return count / 8;
+		
 	}
 
 	public static int getMaxInt() {
@@ -51,8 +66,15 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthInt() {
-		// TODO Auto-generated method stub
-		return -1;
+		int res = 1;
+		int count = 1;
+		while (res > 0) {
+			res = (int) (res * 2);
+			count++;
+
+		}
+		return count / 8;
+	  
 	}
 
 	public static short getMaxShort() {
@@ -68,9 +90,16 @@ public class IntegerPrimitives {
 		return (short) (getMaxShort() + 1);
 	}
 
-	public static short getlengthShort() {
-		// TODO Auto-generated method stub
-		return -1;
+	public static int getlengthShort() {
+		 
+		short res = 1;
+		int count = 1;
+		while (res > 0) {
+			res = (short) (res * 2);
+			count++;
+
+		}
+		return count / 8;
 	}
 	public static char getMaxChar() {
 		char res = 1;
@@ -86,13 +115,25 @@ public class IntegerPrimitives {
 	}
 
 	public static int getLengthChar() {
-		// TODO Auto-generated method stub
-		return -1;
+		
+		char res = 1;
+		int count = 1;
+		while (res > 0) {
+			res = (char) (res * 2);
+			count++;
+
+		}
+		return count / 8;
 	}
 	
 	private static int getLength(long x) {
-		//TODO
-		return -1;
+		long value = 1;
+		int count = 1;
+		while(value < x && value > 0) {
+			value*= 2;
+			count++;
+		}
+		return count / 8;
 	}
 
 	
