@@ -76,5 +76,58 @@ public static int[] removeNumber(int arr[], int index) {
 	  }
 	  return res;
   }
+public static void sort(int[] arr) {
+	boolean flSorted = true;
+	int length = arr.length;
+	do{
+		flSorted = moveMaxToEnd(arr,length);
+		length--;
+	}while(!flSorted);
+}
+		
+	
+	//TODO
+	//Improve algorithm with a proper move MaxToEnd method
+private static boolean moveMaxToEnd(int[] arr, int length) {
+	boolean flSorted = true;
+	for(int i = 1; i < length; i++) {
+		if (arr[i - 1] > arr[i]) {
+			flSorted = false;
+			swap(arr,i);
+		} 
+	}
+	//TODO
+	//Improve algorithm of moveMaxToEnd: (1)no compare of elements that already exist on the proper places
+	//(think of additional parameter of the method with code update
+	//(2) terminate algorithm once an array is already sorted( think of returning some value with code update
+	return flSorted;
+}
+private static void swap(int[] arr, int index) {
+	int tmp = arr[index-1];
+	arr[index - 1] = arr[index];
+	arr[index] = tmp;
+	}
+public static int binaryIndexOf(int[] arr, int number) {
+	int left = 0;
+	int right = arr.length - 1;
+	int middle = arr.length / 2;
+	while (left <= right && arr[middle] != number) {
+		if(arr[middle] < number) {
+			left = middle + 1;
+		} else {
+			right = middle - 1;
+		}
+		middle = (left + right) / 2;
+	}
+	return left > right ? -(left + 1) : getFirstIndex(arr,middle,number);
+}
+private static int getFirstIndex(int[] ar, int middle, int number) {
+	while(middle >= 0 && ar[middle] == number) {
+		middle--;
+	}
+	return middle + 1;
+}
+
+
 
 }
