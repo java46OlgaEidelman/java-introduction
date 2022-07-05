@@ -130,4 +130,5 @@ private static int getFirstIndex(int[] ar, int middle, int number) {
 
 
 
+
 }
